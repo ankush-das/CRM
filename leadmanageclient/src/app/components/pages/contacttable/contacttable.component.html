@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<table class="table table-striped" style="margin-top: 100px;">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Job Position</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Postal Code</th>
+            <th>Region</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let contact of leadContacts">
+            <td>{{ contact.companyName }}</td>
+            <td>{{ contact.jobPosition }}</td>
+            <td>{{ contact.address }}</td>
+            <td>{{ contact.city }}</td>
+            <td>{{ contact.state }}</td>
+            <td>{{ contact.postalCode }}</td>
+            <td>{{ contact.region }}</td>
+            <td>
+                <button type="button" class="btn btn-outline-secondary" (click)="onFillButtonClick(contact.id)"
+                    style="cursor: pointer;">
+                    Fill Details
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+<div style="display: flex; gap: 10px; margin-left: 60px; margin-top: 100px;">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Contacts</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Total Contacts</h6>
+            <p class="card-text">{{ dashboardData.totalLeads }}</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Clients</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Total Clients</h6>
+            <p class="card-text">{{ dashboardData.newClient }}</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Customer</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Total Customer</h6>
+            <p class="card-text">{{ dashboardData.totalCustomers }}</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Revenue</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Total Expected Revenue</h6>
+            <p class="card-text">₹ {{ dashboardData.totalRevenue }}</p>
+        </div>
+    </div>
+</div>
+
+<div style="display:  flex; justify-content:space-evenly;">
+    <div class="mt-4">
+        <h3>Recent Activities</h3>
+        <div class="chat-box">
+            <div *ngFor="let activity of activities">
+                <ng-container *ngIf="activity.activityStatus === 'PENDING'">
+                    <div class="chat-message">
+                        <div class="activity-info">
+                            <div style="display: flex; justify-content:space-between;">
+                                <div class="activity-type">{{ activity.activityType }}</div>
+                                <button (click)="updateStatus(activity.id)">Done</button>
+                                <button (click)="updateStatuscancel(activity.id)">Cancel</button>
+                            </div>
+                            <div class="activity-status">{{ activity.activityStatus }}</div>
+                            <div class="activity-lead-name">{{ activity.lead.name }}</div>
+                            <div class="activity-time">{{ activity.createdDate | date: 'MMMM d, y h:mm a' }}</div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <h3>Activities Completed</h3>
+        <div class="chat-box">
+            <div *ngFor="let activity of activities">
+                <ng-container *ngIf="activity.activityStatus === 'COMPLETED'|| activity.activityStatus === 'CANCELLED'">
+                    <div class="chat-message">
+                        <div class="activity-info">
+                            <div style="display: flex; justify-content:space-between;">
+                                <div class="activity-type">{{ activity.activityType }}</div>
+                            </div>
+                            <div class="activity-status">{{ activity.activityStatus }}</div>
+                            <div class="activity-lead-name">{{ activity.lead.name }}</div>
+                            <div class="activity-time">{{ activity.createdDate | date: 'MMMM d, y h:mm a' }}</div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

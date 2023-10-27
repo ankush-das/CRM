@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div style="display: flex; margin-top: 100px;">
+    <div style="width: 50%;">
+        <!-- Bar Chart -->
+        <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [legend]="barChartLegend"></canvas>
+    </div>
+    <div style="width: 50%;">
+        <!-- Line Chart -->
+        <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+            [legend]="lineChartLegend"></canvas>
+    </div>
+</div>
+
+<div style="width: 50%;">
+    <canvas baseChart [datasets]=" pieChartData" [labels]="pieChartLabels" [options]="pieChartOptions">
+    </canvas>
+</div>

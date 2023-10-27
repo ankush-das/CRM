@@ -1,0 +1,36 @@
+.chat-box {
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 400px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+.chat-box {
+    max-height: 300px;
+    /* Adjust the desired maximum height */
+    overflow-y: auto;
+    /* Enable vertical scrolling when content overflows */
+}
+
+.chat-message {
+    padding: 8px;
+    border: 1px solid #d3d3d3;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.activity-type {
+    font-weight: bold;
+}
+
+.activity-status {
+    color: #666;
+}
+
+.activity-lead-name {
+    color: #333;
+}

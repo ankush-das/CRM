@@ -1,0 +1,25 @@
+<app-navbar></app-navbar>
+<table class="table table-striped" style="margin-top: 100px;">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Job Position</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Postal Code</th>
+            <th>Region</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lead of leads">
+            <td>{{ lead.leadContact.companyName }}</td>
+            <td>{{ lead.leadContact.jobPosition }}</td>
+            <td>{{ lead.leadContact.address }}</td>
+            <td>{{ lead.leadContact.city }}</td>
+            <td>{{ lead.leadContact.state }}</td>
+            <td>{{ lead.leadContact.postalCode }}</td>
+            <td>{{ lead.leadContact.region }}</td>
+        </tr>
+    </tbody>
+</table>
