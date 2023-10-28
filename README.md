@@ -4,5 +4,5 @@
 - [x] Test Coverage
 - [x] Backend Code
 - [x] Frontend Code
-- [ ] API Documentation
+- [x] API Documentation
 - [ ] Frontend Documentation
