@@ -1,10 +1,13 @@
 package com.management.lead.leadMangement.dtotesting;
 
+import com.management.lead.leadmangement.LeadMangementApplication;
 import com.management.lead.leadmangement.dto.JwtResponse;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringBootTest(classes = LeadMangementApplication.class)
 class JwtResponseTest {
 
     @Test

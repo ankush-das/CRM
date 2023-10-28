@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -58,16 +57,17 @@ public class LeadController {
         }
     }
 
-    // delete the captured need
-    @DeleteMapping("/capture/delete/{leadCaptureId}")
-    public ResponseEntity<Void> deleteLeadCapture(@PathVariable Long leadCaptureId) {
-        try {
-            leadService.deleteLeadCapture(leadCaptureId);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (EntityNotFoundException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+    // // delete the captured need
+    // @DeleteMapping("/capture/delete/{leadCaptureId}")
+    // public ResponseEntity<Void> deleteLeadCapture(@PathVariable Long
+    // leadCaptureId) {
+    // try {
+    // leadService.deleteLeadCapture(leadCaptureId);
+    // return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    // } catch (EntityNotFoundException e) {
+    // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    // }
+    // }
 
     // create Contact for the Captured lead
     @PostMapping("/contactInfo/{capturedId}")
@@ -94,10 +94,10 @@ public class LeadController {
         return leadService.updateLeadContactInfo(contactInfoId, leadContactDTO);
     }
 
-    @DeleteMapping("/contact/delete/{contactInfoId}")
-    public void deleteLeadContactInfo(@PathVariable long contactInfoId) {
-        leadService.deleteLeadContactInfo(contactInfoId);
-    }
+    // @DeleteMapping("/contact/delete/{contactInfoId}")
+    // public void deleteLeadContactInfo(@PathVariable long contactInfoId) {
+    // leadService.deleteLeadContactInfo(contactInfoId);
+    // }
 
     // create full lead
     @PostMapping("/create/{leadId}")
@@ -144,17 +144,18 @@ public class LeadController {
         return leadService.getAllUsers();
     }
 
-    // not working so need to test it
-    @DeleteMapping("/lead/delete/{leadId}")
-    public ResponseEntity<Void> deleteLead(
-            @PathVariable("leadId") long leadId) {
-        try {
-            leadService.deleteLead(leadId);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT); // Return 204 No Content on successful deletion
-        } catch (EntityNotFoundException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
+    // // not working so need to test it
+    // @DeleteMapping("/lead/delete/{leadId}")
+    // public ResponseEntity<Void> deleteLead(
+    // @PathVariable("leadId") long leadId) {
+    // try {
+    // leadService.deleteLead(leadId);
+    // return new ResponseEntity<>(HttpStatus.NO_CONTENT); // Return 204 No Content
+    // on successful deletion
+    // } catch (EntityNotFoundException e) {
+    // return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    // }
+    // }
 
     @GetMapping("/lead/{leadId}")
     public ResponseEntity<Lead> leadDetail(@PathVariable Long leadId) {

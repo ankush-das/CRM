@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -19,19 +20,20 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import com.management.lead.leadmangement.LeadMangementApplication;
+import com.management.lead.leadmangement.dto.LeadDTO;
 import com.management.lead.leadmangement.entity.ActivityLog;
 import com.management.lead.leadmangement.entity.Lead;
-import com.management.lead.leadmangement.entity.User;
 import com.management.lead.leadmangement.enumconstants.LeadStage;
 import com.management.lead.leadmangement.exception.InvalidStateException;
 import com.management.lead.leadmangement.exception.LeadNotFoundException;
-import com.management.lead.leadmangement.repository.ActivityLogRepository;
 import com.management.lead.leadmangement.repository.LeadCaptureRepository;
 import com.management.lead.leadmangement.repository.LeadRepo;
+import com.management.lead.leadmangement.services.DashboardService;
 import com.management.lead.leadmangement.services.LeadService;
 import com.management.lead.leadmangement.services.PipelineService;
 import com.management.lead.leadmangement.services.UserService;
@@ -39,6 +41,7 @@ import com.management.lead.leadmangement.services.UserService;
 import jakarta.persistence.EntityNotFoundException;
 
 @ExtendWith(MockitoExtension.class)
+// @SpringBootTest(classes = LeadMangementApplication.class)
 class PipelineServiceTest {
 
     @InjectMocks
@@ -49,6 +52,9 @@ class PipelineServiceTest {
 
     @Mock
     private UserService userService;
+
+    @Mock
+    private DashboardService dashboardService;
 
     @Mock
     private LeadRepo leadRepo;
@@ -309,4 +315,34 @@ class PipelineServiceTest {
         assertFalse(pipelineService.isValidPrevTransition(LeadStage.CLOSED_WON, LeadStage.WON));
 
     }
+
+    @Test
+    void testSoloPatchLeadNotFound() {
+        // Mock the leadRepo to return an empty Optional, indicating lead not found
+        when(leadRepo.findById(1L)).thenReturn(Optional.empty());
+
+        // Call the method to test
+        Lead result = leadService.soloPatch(1L, new LeadDTO());
+
+        // Verify that leadRepo.save was not called (lead not found)
+        Mockito.verify(leadRepo, Mockito.never()).save(any());
+
+        // Assert that the result is null (lead not found)
+        assertEquals(null, result);
+    }
+
+    @Test
+    public void testGetLeadCountByStage() {
+        String stageName = "NEW"; // Replace with the appropriate stage name
+
+        // Mock the behavior of the repository method
+        long expectedCount = 0L;
+
+        // Test the service method
+        Long result = dashboardService.getLeadCountByStage(stageName);
+
+        // Assertions
+        assertEquals(expectedCount, result);
+    }
+
 }

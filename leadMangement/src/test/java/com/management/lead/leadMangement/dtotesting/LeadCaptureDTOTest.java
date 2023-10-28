@@ -1,5 +1,6 @@
 package com.management.lead.leadMangement.dtotesting;
 
+import com.management.lead.leadmangement.LeadMangementApplication;
 import com.management.lead.leadmangement.dto.LeadCaptureDTO;
 import com.management.lead.leadmangement.entity.LeadCapture;
 
@@ -11,12 +12,14 @@ import jakarta.validation.ValidatorFactory;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+@SpringBootTest(classes = LeadMangementApplication.class)
 class LeadCaptureDTOTest {
 
     private Validator validator;

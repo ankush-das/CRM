@@ -1,10 +1,13 @@
 package com.management.lead.leadMangement.dtotesting;
 
+import com.management.lead.leadmangement.LeadMangementApplication;
 import com.management.lead.leadmangement.dto.DashboardDTO;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringBootTest(classes = LeadMangementApplication.class)
 class DashboardDTOTest {
 
     @Test
@@ -37,5 +40,19 @@ class DashboardDTOTest {
         dashboardDTO.setNewClient(10);
 
         assertEquals(10, dashboardDTO.getNewClient());
+    }
+
+    @Test
+    public void testExpectedRevenueGetter() {
+        DashboardDTO dto = new DashboardDTO();
+        dto.setExpectedRevenue(500.0);
+        assertEquals(500.0, dto.getExpectedRevenue(), 0.001); // Using delta for double comparison
+    }
+
+    @Test
+    public void testConversionRateGetter() {
+        DashboardDTO dto = new DashboardDTO();
+        dto.setConversionRate(0.15);
+        assertEquals(0.15, dto.getConversionRate(), 0.001); // Using delta for double comparison
     }
 }
