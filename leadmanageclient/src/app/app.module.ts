@@ -14,7 +14,6 @@ import { ContacttableComponent } from './components/pages/contacttable/contactta
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LeaddetailsComponent } from './components/pages/leaddetails/leaddetails.component';
 import { LeadformpageComponent } from './components/pages/leadformpage/leadformpage.component';
-import { HomeComponent } from './components/pages/home/home.component';
 import { PipelineComponent } from './components/pages/pipeline/pipeline.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CustomerComponent } from './components/pages/customer/customer.component';
@@ -33,7 +32,6 @@ import { NgChartsModule } from 'ng2-charts';
     NavbarComponent,
     LeaddetailsComponent,
     LeadformpageComponent,
-    HomeComponent,
     PipelineComponent,
     CustomerComponent,
     DashboardComponent,

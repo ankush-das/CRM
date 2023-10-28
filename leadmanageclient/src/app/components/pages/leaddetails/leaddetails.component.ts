@@ -16,7 +16,7 @@ export class LeaddetailsComponent implements OnInit {
   lead: any
   leadI = { quote: 'Your initial quote', budget: '', probability: '', tag: '', priority: '', stage: '', source: '' };
 
-  logs: ActivityLog[] = [];
+  logs: any[] = [];
 
   editMode = false;
 

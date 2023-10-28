@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 import { LeadCaptureDTO } from '../model/LeadCaptureDTO';
 import { ContactInfo } from '../model/ContactInfo';
 import { LeadDTO } from '../model/LeadDTO';
@@ -47,4 +47,10 @@ export class LeadFormService {
         const url = `${this.baseUrl}/allcontacts`;
         return this.http.get<ContactInfo[]>(url);
     }
+
+    // createLeadf(leadID: string, leadData: any): Observable<any> {
+    //     const url = `${this.baseUrl}/${leadID}`;
+    //     return this.http.post(url, leadData);
+    // }
+
 }

@@ -23,16 +23,8 @@ export class PipelineComponent implements OnInit {
   searchTerm: string = '';
   capturedLeadId: number = 0;
   users: any[] = [];
-
-
-  activityDTO: LeadActivity = {
-    activityType: 'YourActivityType',
-    activityStatus: 'PENDING',
-    dueDate: new Date(),
-    summary: 'YourSummary',
-    detail: 'YourDetail',
-    assignedUser: 0,
-  };
+  successMessage: string = '';
+  activityDTO: LeadActivity = new LeadActivity();
 
   constructor(private pipelineService: PipelineService, private leadFormService: LeadFormService, private activityService: ActivityService, private router: Router) { }
 
@@ -49,45 +41,85 @@ export class PipelineComponent implements OnInit {
 
   @ViewChild('successModal') successModal: any;
 
+  // onTransitionNext(event: Event, leadId: number) {
+  //   event.stopPropagation();
+  //   this.pipelineService.nextLeadStageTransition(leadId)
+  //     .subscribe(
+  //       (response) => {
+  //         console.log('Transition successful:', response);
+  //         window.location.reload();
+  //       },
+  //       (error) => {
+  //         console.error('Transition failed:', error);
+  //       }
+  //     );
+  // }
+
   onTransitionNext(event: Event, leadId: number) {
     event.stopPropagation();
-    this.pipelineService.nextLeadStageTransition(leadId)
-      .subscribe(
-        (response) => {
-          console.log('Transition successful:', response);
-          window.location.reload();
-        },
-        (error) => {
-          console.error('Transition failed:', error);
-        }
-      );
+    this.pipelineService.nextLeadStageTransition(leadId).subscribe({
+      next: (response) => {
+        console.log('Transition successful:', response);
+        window.location.reload();
+      },
+      error: (error) => {
+        console.error('Transition failed:', error);
+      },
+    });
   }
+
+
+  // onTransitionPrev(event: Event, leadId: number) {
+  //   event.stopPropagation();
+  //   this.pipelineService.prevLeadStageTransition(leadId)
+  //     .subscribe(
+  //       (response) => {
+  //         console.log('Previous transition successful:', response);
+  //         window.location.reload();
+  //       },
+  //       (error) => {
+  //         console.error('Previous transition failed:', error);
+  //       }
+  //     );
+  // }
 
   onTransitionPrev(event: Event, leadId: number) {
     event.stopPropagation();
-    this.pipelineService.prevLeadStageTransition(leadId)
-      .subscribe(
-        (response) => {
-          console.log('Previous transition successful:', response);
-          window.location.reload();
-        },
-        (error) => {
-          console.error('Previous transition failed:', error);
-        }
-      );
+    this.pipelineService.prevLeadStageTransition(leadId).subscribe({
+      next: (response) => {
+        console.log('Previous transition successful:', response);
+        window.location.reload();
+      },
+      error: (error) => {
+        console.error('Previous transition failed:', error);
+      },
+    });
   }
 
+
+  // searchLeadsBySource() {
+  //   this.pipelineService.filterLeadsBySource(this.searchTerm)
+  //     .subscribe(
+  //       (leads) => {
+  //         this.leads = leads;
+  //       },
+  //       (error) => {
+  //         console.error('Error searching by source:', error);
+  //       }
+  //     );
+  // }
+
   searchLeadsBySource() {
-    this.pipelineService.filterLeadsBySource(this.searchTerm)
-      .subscribe(
-        (leads) => {
-          this.leads = leads;
-        },
-        (error) => {
-          console.error('Error searching by source:', error);
-        }
-      );
+    this.pipelineService.filterLeadsBySource(this.searchTerm).subscribe({
+      next: (leads) => {
+        this.leads = leads;
+      },
+      error: (error) => {
+        console.error('Error searching by source:', error);
+      },
+    });
   }
+
 
   generateStars(priority: string): { icon: IconProp; starClass: string }[] {
     const stars: { icon: IconProp; starClass: string }[] = [];
@@ -117,16 +149,19 @@ export class PipelineComponent implements OnInit {
   }
 
   createActivity(capturedLeadId: number, activityDTO: LeadActivity) {
-    this.activityService.createActivity(capturedLeadId, activityDTO)
-      .subscribe(
-        (createdActivity) => {
-          // Handle the successful response here
-          console.log('Activity created:', createdActivity);
-        },
-        (error) => {
-          // Handle errors here
-          console.error('Error creating activity:', error);
-        }
-      );
+    this.activityService.createActivity(capturedLeadId, activityDTO).subscribe({
+      next: (createdActivity) => {
+        console.log('Activity created:', createdActivity);
+        this.successMessage = 'Lead captured successfully';
+        activityDTO.reset();
+        setTimeout(() => {
+          this.successMessage = '';
+        }, 3000);
+      },
+      error: (error) => {
+        // Handle errors here
+        console.error('Error creating activity:', error);
+      },
+    });
   }
 }

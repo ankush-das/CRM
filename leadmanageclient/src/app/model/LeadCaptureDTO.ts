@@ -8,4 +8,10 @@ export class LeadCaptureDTO {
         this.email = data.email || '';
         this.phone = data.phone || '';
     }
+
+    resetFields(): void {
+        this.name = '';
+        this.email = '';
+        this.phone = '';
+    }
 }

@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LeadDTO } from 'src/app/model/LeadDTO';
@@ -15,8 +14,9 @@ export class LeadformpageComponent {
   lead: LeadDTO = new LeadDTO();
   leadID: number = 0;
   isEditMode = false;
+  successMessage: string = '';
 
-  constructor(private http: HttpClient, private leadFormService: LeadFormService, private route: ActivatedRoute) { }
+  constructor(private leadFormService: LeadFormService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.leadFormService.getUsers().subscribe(data => {
@@ -31,40 +31,41 @@ export class LeadformpageComponent {
   }
 
   onSubmit() {
-    const url = `http://localhost:8080/leads/create/${this.leadID}`;
 
-    this.http.post(url, this.lead).subscribe(
-      (response) => {
-        console.log('Data sent successfully:', this.lead);
+    this.leadFormService.createLead(this.leadID, this.lead).subscribe({
+      next: (response) => {
+        console.log('Data sent successfully:', this.leadID);
+        this.successMessage = 'Lead captured successfully';
+        this.lead.reset();
+        setTimeout(() => {
+          this.successMessage = '';
+        }, 3000);
       },
-      (error) => {
+      error: (error) => {
         console.error('Error:', error);
       }
-    );
+    });
   }
 
   updateLead(leadId: number, leadDTO: any) {
-    this.leadFormService.updateLead(leadId, leadDTO).subscribe(
-      (updatedLead) => {
+    this.leadFormService.updateLead(leadId, leadDTO).subscribe({
+      next: (updatedLead) => {
         console.log('Lead updated successfully:', updatedLead);
       },
-      (error) => {
+      error: (error) => {
         console.error('Update failed:', error);
       }
-    );
+    });
   }
 
   patchSoloLead(leadId: number, leadDTO: any) {
-    this.leadFormService.patchLead(leadId, leadDTO).subscribe(
-      (updatedLead) => {
-        // Handle the response, updatedLead will contain the updated Lead data.
+    this.leadFormService.patchLead(leadId, leadDTO).subscribe({
+      next: (updatedLead) => {
         console.log('Lead updated successfully:', updatedLead);
       },
-      (error) => {
-        // Handle any errors, such as 404 Not Found if the Lead with the specified ID is not found.
+      error: (error) => {
         console.error('Error:', error);
       }
-    );
+    });
   }
-
 }

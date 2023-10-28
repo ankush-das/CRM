@@ -12,4 +12,16 @@ export class LeadDTO {
         public expectedClosingDate?: Date,
         public assignedUser: UserDTO = new UserDTO()
     ) { }
+
+    reset(): void {
+        this.quote = '';
+        this.budget = 0;
+        this.probability = '';
+        this.priority = '';
+        this.stage = '';
+        this.source = '';
+        this.tag = '';
+        this.expectedClosingDate = undefined;
+        this.assignedUser = new UserDTO();
+    }
 }

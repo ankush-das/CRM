@@ -4,23 +4,32 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Lead Capture</h5>
-                    <form (ngSubmit)="onCaptureLead(leadCaptureDTO)" class="form">
+                    <div *ngIf="successMessage" class="alert alert-success">
+                        {{ successMessage }}
+                    </div>
+                    <form (ngSubmit)="onCaptureLead(leadCaptureDTO)" #registrationForm="ngForm" class="form">
+
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" [(ngModel)]="leadCaptureDTO.name" required
-                                class="form-control" autocomplete="off">
+                                class="form-control" autocomplete="off" placeholder="Enter your name">
                         </div>
+
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" [(ngModel)]="leadCaptureDTO.email" required
-                                class="form-control" autocomplete="off">
+                                class="form-control" autocomplete="off" placeholder="Enter your email">
                         </div>
+
                         <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input type="text" id="phone" name="phone" [(ngModel)]="leadCaptureDTO.phone" required
-                                class="form-control" autocomplete="off">
+                            <input type="tel" id="phone" [(ngModel)]="leadCaptureDTO.phone" name="phone" required
+                                class="form-control" autocomplete="off" placeholder="Enter your phone number"
+                                maxlength="10">
                         </div>
-                        <button type="submit" class="btn btn-primary mt-2">Capture Lead</button>
+
+                        <button type="submit" class="btn btn-primary mt-2" [disabled]="!registrationForm.valid">Capture
+                            Lead</button>
                     </form>
                 </div>
             </div>

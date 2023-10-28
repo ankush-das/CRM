@@ -12,19 +12,27 @@ import { AuthService } from 'src/app/services/AuthService';
 
 export class LoginComponent {
   loginRequest: LoginRequest = new LoginRequest();
+  errorMessage: string = '';
 
   constructor(private authService: AuthService, private router: Router) { }
 
   login(): void {
-    this.authService.login(this.loginRequest).pipe(
-      catchError((error) => {
-        console.error('Login failed:', error);
-        throw error;
-      })
-    ).subscribe((response) => {
-      const token = response.token;
-      this.authService.setToken(token);
-      this.router.navigate(["/pipeline"])
-    });
+    this.authService.login(this.loginRequest)
+      .pipe(
+        catchError((error) => {
+          console.error('Login failed:', error);
+          if (error.status === 401) {
+            this.errorMessage = 'Invalid credentials';
+          } else {
+            this.errorMessage = 'An error occurred during login';
+          }
+          throw error;
+        })
+      )
+      .subscribe((response) => {
+        const token = response.token;
+        this.authService.setToken(token);
+        this.router.navigate(["/pipeline"]);
+      });
   }
 }

@@ -7,4 +7,15 @@ export class ContactInfo {
     state: string = '';
     postalCode: string = '';
     region: string = '';
+
+    reset(): void {
+        this.id = 0;
+        this.companyName = '';
+        this.jobPosition = '';
+        this.address = '';
+        this.city = '';
+        this.state = '';
+        this.postalCode = '';
+        this.region = '';
+    }
 }

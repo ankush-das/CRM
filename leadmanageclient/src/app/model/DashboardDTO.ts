@@ -3,4 +3,5 @@ export class DashboardDTO {
     totalCustomers: number = 0;
     totalRevenue: number = 0;
     newClient: number = 0;
+    conversionRate: number = 0;
 }

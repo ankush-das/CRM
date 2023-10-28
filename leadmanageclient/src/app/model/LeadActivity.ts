@@ -14,4 +14,13 @@ export class LeadActivity {
         this.detail = '';
         this.assignedUser = 0;
     }
+
+    reset(): void {
+        this.activityType = '';
+        this.activityStatus = '';
+        this.dueDate = new Date();
+        this.summary = '';
+        this.detail = '';
+        this.assignedUser = 0;
+    }
 }
