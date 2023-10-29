@@ -24,24 +24,20 @@ This endpoint allows you to update lead contact information.
   - **Format**: int64
   - **Required**: Yes
 
-### Request Body
+**Request Body**
 
-- Content Type: `application/json`
-  - Schema:
-    ```json
-    {
-      {
-  "companyName": "string",
-  "jobPosition": "string",
-  "address": "string",
-  "city": "string",
-  "state": "string",
-  "postalCode": 0,
-  "region": "string"
-}
-    }
-    ```
-  - **Required**: Yes
+- **Content Type**: `application/json`
+- **Schema**:
+  ```json
+  {
+    "companyName": "string",
+    "jobPosition": "string",
+    "address": "string",
+    "city": "string",
+    "state": "string",
+    "postalCode": 0,
+    "region": "string"
+  }
 
 ### Responses
 
@@ -68,16 +64,6 @@ This endpoint allows you to update lead contact information.
 }
       ```
   - Description: The request was successful.
-
-## Components
-
-### Schemas
-
-- `LeadContactDTO`
-  - Define the schema details for `LeadContactDTO` here.
-
-- `LeadContactInfo`
-  - Define the schema details for `LeadContactInfo` here.
 
 ---
 
