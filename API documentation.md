@@ -103,12 +103,12 @@ This endpoint allows you to update lead capture information.
     - Schema:
       ```json
       {
-  "id": 0,
-  "name": "string",
-  "email": "string",
-  "phone": "string",
-  "createdDate": "2023-10-28T05:02:49.998Z"
-}
+        "id": 0,
+        "name": "string",
+        "email": "string",
+        "phone": "string",
+        "createdDate": "2023-10-28T05:02:49.998Z"
+      }
       ```
   - Description: The request was successful.
 
@@ -137,53 +137,44 @@ This endpoint allows you to transition a lead to the previous stage in the pipel
     - Schema:
       ```json
       {
-  "id": 0,
-  "quote": "string",
-  "budget": 1,
-  "probability": 0,
-  "priority": "LOW",
-  "stage": "NEW",
-  "source": "string",
-  "tag": "string",
-  "assignedUser": {
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "email": "string",
-    "companyname": "string",
-    "phone": "string",
-    "teamname": "string"
-  },
-  "expectedClosingDate": "2023-10-28T05:07:27.487Z",
-  "leadContact": {
-    "id": 0,
-    "companyName": "string",
-    "jobPosition": "string",
-    "address": "string",
-    "city": "string",
-    "state": "string",
-    "postalCode": 0,
-    "region": "string",
-    "leadCaptureData": {
-      "id": 0,
-      "name": "string",
-      "email": "string",
-      "phone": "string",
-      "createdDate": "2023-10-28T05:07:27.487Z"
+        "id": 0,
+        "quote": "string",
+        "budget": 1,
+        "probability": 0,
+        "priority": "LOW",
+        "stage": "NEW",
+        "source": "string",
+        "tag": "string",
+        "assignedUser": {
+          "id": 0,
+          "name": "string",
+          "password": "string",
+          "email": "string",
+          "companyname": "string",
+          "phone": "string",
+          "teamname": "string"
+      },
+        "expectedClosingDate": "2023-10-28T05:07:27.487Z",
+        "leadContact": {
+          "id": 0,
+          "companyName": "string",
+          "jobPosition": "string",
+          "address": "string",
+          "city": "string",
+          "state": "string",
+          "postalCode": 0,
+          "region": "string",
+        "leadCaptureData": {
+          "id": 0,
+          "name": "string",
+          "email": "string",
+          "phone": "string",
+          "createdDate": "2023-10-28T05:07:27.487Z"
+      }
+      }
     }
-  }
-}
       ```
   - Description: The request was successful.
-
-## Components
-
-### Schemas
-
-- `Lead`
-  - Define the schema details for the `Lead` object here.
-
-
 
 # Next Lead Stage Transition
 
@@ -208,14 +199,14 @@ This endpoint allows you to transition a lead to the next stage in the pipeline.
     - Schema:
       ```json
       {
-  "id": 0,
-  "quote": "string",
-  "budget": 1,
-  "probability": 0,
-  "priority": "LOW",
-  "stage": "NEW",
-  "source": "string",
-  "tag": "string",
+        "id": 0,
+        "quote": "string",
+        "budget": 1,
+        "probability": 0,
+        "priority": "LOW",
+        "stage": "NEW",
+        "source": "string",
+        "tag": "string",
   "assignedUser": {
     "id": 0,
     "name": "string",
@@ -224,7 +215,7 @@ This endpoint allows you to transition a lead to the next stage in the pipeline.
     "companyname": "string",
     "phone": "string",
     "teamname": "string"
-  },
+    },
   "expectedClosingDate": "2023-10-28T05:09:37.998Z",
   "leadContact": {
     "id": 0,
@@ -246,15 +237,6 @@ This endpoint allows you to transition a lead to the next stage in the pipeline.
 }
       ```
   - Description: The request was successful.
-
-## Components
-
-### Schemas
-
-- `Lead`
-  - Define the schema details for the `Lead` object here.
-
-
 
 
 # Lost Lead Stage Transition
