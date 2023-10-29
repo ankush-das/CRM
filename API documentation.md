@@ -172,7 +172,7 @@ This endpoint allows you to transition a lead to the previous stage in the pipel
           "createdDate": "2023-10-28T05:07:27.487Z"
       }
       }
-    }
+      }
       ```
   - Description: The request was successful.
 
@@ -234,7 +234,7 @@ This endpoint allows you to transition a lead to the next stage in the pipeline.
           "createdDate": "2023-10-28T05:09:37.998Z"
       }
       }
-    }
+      }
       ```
   - Description: The request was successful.
 
@@ -298,18 +298,10 @@ This endpoint allows you to transition a lead to the "lost" stage in the pipelin
       "createdDate": "2023-10-28T05:12:37.037Z"
     }
   }
-}
       ```
   - Description: The request was successful.
 
-## Components
-
-### Schemas
-
-- `Lead`
-  - Define the schema details for the `Lead` object here.
-
-
+---
 
 # Closed-WON Lead Stage Transition
 
