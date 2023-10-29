@@ -749,9 +749,9 @@ This endpoint allows you to obtain an authentication token.
   - Schema:
     ```json
     {
-  "username": "string",
-  "password": "string"
-}
+      "username": "string",
+      "password": "string"
+    }
     ```
   - **Required**: Yes
 
@@ -762,23 +762,11 @@ This endpoint allows you to obtain an authentication token.
     - Schema:
       ```json
       {
-  "token": "token string",
-  "username": "string",
-}
+        "token": "token string",
+        "username": "string",
+      }
       ```
   - Description: The request was successful.
-
-## Components
-
-### Schemas
-
-- `LoginRequest`
-  - Define the schema details for `LoginRequest` here.
-
-- `JwtResponse`
-  - Define the schema details for `JwtResponse` here.
-
-
 
 # User Registration
 
@@ -795,14 +783,14 @@ This endpoint allows users to register for a new account.
   - Schema:
     ```json
     {
-  "username": "string",
-  "password": "string",
-  "email": "string",
-  "companyname": "string",
-  "phone": "string",
-  "role": "string",
-  "teamname": "string"
-}
+      "username": "string",
+      "password": "string",
+      "email": "string",
+      "companyname": "string",
+      "phone": "string",
+      "role": "string",
+      "teamname": "string"
+    }
     ```
   - **Required**: Yes
 
@@ -819,12 +807,6 @@ This endpoint allows users to register for a new account.
   - Description: The request was successful.
 
 ## Components
-
-### Schemas
-
-- `SignUpRequest`
-  - Define the schema details for `SignUpRequest` here.
-
 
 
 ## Create Activity
@@ -849,13 +831,13 @@ This endpoint allows you to create a new lead activity.
   - Schema:
     ```json
     {
-  "activityType": "EMAIL",
-  "activityStatus": "PENDING",
-  "dueDate": "2023-10-28T06:22:49.318Z",
-  "summary": "string",
-  "detail": "string",
-  "assignedUser": 0
-}
+      "activityType": "EMAIL",
+      "activityStatus": "PENDING",
+      "dueDate": "2023-10-28T06:22:49.318Z",
+      "summary": "string",
+      "detail": "string",
+      "assignedUser": 0
+    }
     ```
   - **Required**: Yes
 
@@ -866,30 +848,30 @@ This endpoint allows you to create a new lead activity.
     - Schema:
       ```json
       {
-  "id": 0,
-  "activityType": "EMAIL",
-  "createdDate": "2023-10-28T06:22:49.319Z",
-  "dueDate": "2023-10-28T06:22:49.319Z",
-  "summary": "string",
-  "detail": "string",
-  "activityStatus": "PENDING",
-  "assignedUser": {
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "email": "string",
-    "companyname": "string",
-    "phone": "string",
-    "teamname": "string"
-  },
-  "lead": {
-    "id": 0,
-    "name": "string",
-    "email": "string",
-    "phone": "string",
-    "createdDate": "2023-10-28T06:22:49.319Z"
-  }
-}
+        "id": 0,
+        "activityType": "EMAIL",
+        "createdDate": "2023-10-28T06:22:49.319Z",
+        "dueDate": "2023-10-28T06:22:49.319Z",
+        "summary": "string",
+        "detail": "string",
+        "activityStatus": "PENDING",
+    "assignedUser": {
+        "id": 0,
+        "name": "string",
+        "password": "string",
+        "email": "string",
+        "companyname": "string",
+        "phone": "string",
+        "teamname": "string"
+    },
+    "lead": {
+        "id": 0,
+        "name": "string",
+        "email": "string",
+        "phone": "string",
+        "createdDate": "2023-10-28T06:22:49.319Z"
+      }
+    }
       ```
   - Description: The request was successful.
 
@@ -917,16 +899,16 @@ This endpoint allows you to update lead information using the PATCH method.
   - Schema:
     ```json
     {
-  "quote": "string",
-  "budget": 1,
-  "probability": 0,
-  "priority": "string",
-  "stage": "string",
-  "source": "string",
-  "tag": "string",
-  "expectedClosingDate": "2023-10-28T06:23:49.364Z",
-  "assignedUser": 0
-}
+      "quote": "string",
+      "budget": 1,
+      "probability": 0,
+      "priority": "string",
+      "stage": "string",
+      "source": "string",
+      "tag": "string",
+      "expectedClosingDate": "2023-10-28T06:23:49.364Z",
+      "assignedUser": 0
+    }
     ```
   - **Required**: Yes
 
@@ -937,23 +919,23 @@ This endpoint allows you to update lead information using the PATCH method.
     - Schema:
       ```json
       {
-  "id": 0,
-  "quote": "string",
-  "budget": 1,
-  "probability": 0,
-  "priority": "LOW",
-  "stage": "NEW",
-  "source": "string",
-  "tag": "string",
-  "assignedUser": {
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "email": "string",
-    "companyname": "string",
-    "phone": "string",
-    "teamname": "string"
-  },
+        "id": 0,
+        "quote": "string",
+        "budget": 1,
+        "probability": 0,
+        "priority": "LOW",
+        "stage": "NEW",
+        "source": "string",
+        "tag": "string",
+    "assignedUser": {
+        "id": 0,
+        "name": "string",
+        "password": "string",
+        "email": "string",
+        "companyname": "string",
+        "phone": "string",
+        "teamname": "string"
+    },
   "expectedClosingDate": "2023-10-28T06:23:49.365Z",
   "leadContact": {
     "id": 0,
@@ -964,13 +946,13 @@ This endpoint allows you to update lead information using the PATCH method.
     "state": "string",
     "postalCode": 0,
     "region": "string",
-    "leadCaptureData": {
-      "id": 0,
-      "name": "string",
-      "email": "string",
-      "phone": "string",
-      "createdDate": "2023-10-28T06:23:49.365Z"
-    }
+      "leadCaptureData": {
+        "id": 0,
+        "name": "string",
+        "email": "string",
+        "phone": "string",
+        "createdDate": "2023-10-28T06:23:49.365Z"
+      }
   }
 }
       ```
