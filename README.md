@@ -5,4 +5,4 @@
 - [x] Backend Code
 - [x] Frontend Code
 - [x] API Documentation
-- [ ] Frontend Documentation
+- [x] Frontend Documentation
