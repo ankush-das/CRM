@@ -326,53 +326,46 @@ This endpoint allows you to transition a lead to the "closed-won" stage in the p
     - Schema:
       ```json
       {
-  "id": 0,
-  "quote": "string",
-  "budget": 1,
-  "probability": 0,
-  "priority": "LOW",
-  "stage": "NEW",
-  "source": "string",
-  "tag": "string",
-  "assignedUser": {
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "email": "string",
-    "companyname": "string",
-    "phone": "string",
-    "teamname": "string"
-  },
-  "expectedClosingDate": "2023-10-28T05:14:29.010Z",
-  "leadContact": {
-    "id": 0,
-    "companyName": "string",
-    "jobPosition": "string",
-    "address": "string",
-    "city": "string",
-    "state": "string",
-    "postalCode": 0,
-    "region": "string",
-    "leadCaptureData": {
-      "id": 0,
-      "name": "string",
-      "email": "string",
-      "phone": "string",
-      "createdDate": "2023-10-28T05:14:29.010Z"
-    }
-  }
-}
+        "id": 0,
+        "quote": "string",
+        "budget": 1,
+        "probability": 0,
+        "priority": "LOW",
+        "stage": "NEW",
+        "source": "string",
+        "tag": "string",
+        "assignedUser": {
+          "id": 0,
+          "name": "string",
+          "password": "string",
+          "email": "string",
+          "companyname": "string",
+          "phone": "string",
+          "teamname": "string"
+      },
+      "expectedClosingDate": "2023-10-28T05:14:29.010Z",
+      "leadContact": {
+          "id": 0,
+          "companyName": "string",
+          "jobPosition": "string",
+          "address": "string",
+          "city": "string",
+          "state": "string",
+          "postalCode": 0,
+          "region": "string",
+      "leadCaptureData": {
+          "id": 0,
+          "name": "string",
+          "email": "string",
+          "phone": "string",
+          "createdDate": "2023-10-28T05:14:29.010Z"
+          }
+        }
+      }
       ```
   - Description: The request was successful.
 
-## Components
-
-### Schemas
-
-- `Lead`
-  - Define the schema details for the `Lead` object here.
-
-
+---
 
 
 # Update Activity Status to Complete
@@ -398,41 +391,34 @@ This endpoint allows you to update the status of a lead activity to "complete."
     - Schema:
       ```json
       {
-  "id": 0,
-  "activityType": "EMAIL",
-  "createdDate": "2023-10-28T06:03:41.009Z",
-  "dueDate": "2023-10-28T06:03:41.009Z",
-  "summary": "string",
-  "detail": "string",
-  "activityStatus": "PENDING",
-  "assignedUser": {
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "email": "string",
-    "companyname": "string",
-    "phone": "string",
-    "teamname": "string"
-  },
-  "lead": {
-    "id": 0,
-    "name": "string",
-    "email": "string",
-    "phone": "string",
-    "createdDate": "2023-10-28T06:03:41.009Z"
-  }
-}
+        "id": 0,
+        "activityType": "EMAIL",
+        "createdDate": "2023-10-28T06:03:41.009Z",
+        "dueDate": "2023-10-28T06:03:41.009Z",
+        "summary": "string",
+        "detail": "string",
+        "activityStatus": "PENDING",
+      "assignedUser": {
+        "id": 0,
+        "name": "string",
+        "password": "string",
+        "email": "string",
+        "companyname": "string",
+        "phone": "string",
+        "teamname": "string"
+      },
+      "lead": {
+        "id": 0,
+        "name": "string",
+        "email": "string",
+        "phone": "string",
+        "createdDate": "2023-10-28T06:03:41.009Z"
+      }
+      }    
       ```
   - Description: The request was successful.
 
-## Components
-
-### Schemas
-
-- `LeadActivity`
-  - Define the schema details for the `LeadActivity` object here.
-
-
+---
 
 # Update Activity Status to Cancel
 
@@ -457,40 +443,34 @@ This endpoint allows you to update the status of a lead activity to "cancel."
     - Schema:
       ```json
       {
-  "id": 0,
-  "activityType": "EMAIL",
-  "createdDate": "2023-10-28T06:05:21.189Z",
-  "dueDate": "2023-10-28T06:05:21.189Z",
-  "summary": "string",
-  "detail": "string",
-  "activityStatus": "PENDING",
-  "assignedUser": {
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "email": "string",
-    "companyname": "string",
-    "phone": "string",
-    "teamname": "string"
-  },
-  "lead": {
-    "id": 0,
-    "name": "string",
-    "email": "string",
-    "phone": "string",
-    "createdDate": "2023-10-28T06:05:21.189Z"
-  }
-}
+        "id": 0,
+        "activityType": "EMAIL",
+        "createdDate": "2023-10-28T06:05:21.189Z",
+        "dueDate": "2023-10-28T06:05:21.189Z",
+        "summary": "string",
+        "detail": "string",
+        "activityStatus": "PENDING",
+      "assignedUser": {
+        "id": 0,
+        "name": "string",
+        "password": "string",
+        "email": "string",
+        "companyname": "string",
+        "phone": "string",
+        "teamname": "string"
+      },
+    "lead": {
+        "id": 0,
+        "name": "string",
+        "email": "string",
+        "phone": "string",
+        "createdDate": "2023-10-28T06:05:21.189Z"
+      }
+    }
       ```
   - Description: The request was successful.
 
-## Components
-
-### Schemas
-
-- `LeadActivity`
-  - Define the schema details for the `LeadActivity` object here.
-
+---
 
 # Update Lead
 
@@ -514,16 +494,16 @@ This endpoint allows you to update lead information.
   - Schema:
     ```json
     {
-  "quote": "string",
-  "budget": 1,
-  "probability": 0,
-  "priority": "string",
-  "stage": "string",
-  "source": "string",
-  "tag": "string",
-  "expectedClosingDate": "2023-10-28T06:08:11.231Z",
-  "assignedUser": 0
-}
+      "quote": "string",
+      "budget": 1,
+      "probability": 0,
+      "priority": "string",
+      "stage": "string",
+      "source": "string",
+      "tag": "string",
+      "expectedClosingDate": "2023-10-28T06:08:11.231Z",
+      "assignedUser": 0
+    }
     ```
   - **Required**: Yes
 
@@ -534,33 +514,33 @@ This endpoint allows you to update lead information.
     - Schema:
       ```json
       {
-  "id": 0,
-  "quote": "string",
-  "budget": 1,
-  "probability": 0,
-  "priority": "LOW",
-  "stage": "NEW",
-  "source": "string",
-  "tag": "string",
-  "assignedUser": {
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "email": "string",
-    "companyname": "string",
-    "phone": "string",
-    "teamname": "string"
-  },
-  "expectedClosingDate": "2023-10-28T06:08:11.270Z",
-  "leadContact": {
-    "id": 0,
-    "companyName": "string",
-    "jobPosition": "string",
-    "address": "string",
-    "city": "string",
-    "state": "string",
-    "postalCode": 0,
-    "region": "string",
+        "id": 0,
+        "quote": "string",
+        "budget": 1,
+        "probability": 0,
+        "priority": "LOW",
+        "stage": "NEW",
+        "source": "string",
+        "tag": "string",
+    "assignedUser": {
+      "id": 0,
+      "name": "string",
+      "password": "string",
+      "email": "string",
+      "companyname": "string",
+      "phone": "string",
+      "teamname": "string"
+    },
+    "expectedClosingDate": "2023-10-28T06:08:11.270Z",
+    "leadContact": {
+      "id": 0,
+      "companyName": "string",
+      "jobPosition": "string",
+      "address": "string",
+      "city": "string",
+      "state": "string",
+      "postalCode": 0,
+      "region": "string",
     "leadCaptureData": {
       "id": 0,
       "name": "string",
@@ -570,20 +550,8 @@ This endpoint allows you to update lead information.
     }
   }
 }
-
       ```
   - Description: The request was successful.
-
-## Components
-
-### Schemas
-
-- `LeadDTO`
-  - Define the schema details for `LeadDTO` here.
-
-- `Lead`
-  - Define the schema details for `Lead` here.
-
 
 # Create Lead
 
@@ -607,16 +575,16 @@ This endpoint allows you to create a new lead.
   - Schema:
     ```json
     {
-  "quote": "string",
-  "budget": 1,
-  "probability": 0,
-  "priority": "string",
-  "stage": "string",
-  "source": "string",
-  "tag": "string",
-  "expectedClosingDate": "2023-10-28T06:10:49.768Z",
-  "assignedUser": 0
-}
+      "quote": "string",
+      "budget": 1,
+      "probability": 0,
+      "priority": "string",
+      "stage": "string",
+      "source": "string",
+      "tag": "string",
+      "expectedClosingDate": "2023-10-28T06:10:49.768Z",
+      "assignedUser": 0
+    }
     ```
   - **Required**: Yes
 
@@ -627,56 +595,44 @@ This endpoint allows you to create a new lead.
     - Schema:
       ```json
       {
-  "id": 0,
-  "quote": "string",
-  "budget": 1,
-  "probability": 0,
-  "priority": "LOW",
-  "stage": "NEW",
-  "source": "string",
-  "tag": "string",
-  "assignedUser": {
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "email": "string",
-    "companyname": "string",
-    "phone": "string",
-    "teamname": "string"
-  },
-  "expectedClosingDate": "2023-10-28T06:10:49.771Z",
-  "leadContact": {
-    "id": 0,
-    "companyName": "string",
-    "jobPosition": "string",
-    "address": "string",
-    "city": "string",
-    "state": "string",
-    "postalCode": 0,
-    "region": "string",
+        "id": 0,
+        "quote": "string",
+        "budget": 1,
+        "probability": 0,
+        "priority": "LOW",
+        "stage": "NEW",
+        "source": "string",
+        "tag": "string",
+    "assignedUser": {
+        "id": 0,
+        "name": "string",
+        "password": "string",
+        "email": "string",
+        "companyname": "string",
+        "phone": "string",
+        "teamname": "string"
+    },
+    "expectedClosingDate": "2023-10-28T06:10:49.771Z",
+    "leadContact": {
+        "id": 0,
+        "companyName": "string",
+        "jobPosition": "string",
+        "address": "string",
+        "city": "string",
+        "state": "string",
+        "postalCode": 0,
+        "region": "string",
     "leadCaptureData": {
-      "id": 0,
-      "name": "string",
-      "email": "string",
-      "phone": "string",
-      "createdDate": "2023-10-28T06:10:49.771Z"
+        "id": 0,
+        "name": "string",
+        "email": "string",
+        "phone": "string",
+        "createdDate": "2023-10-28T06:10:49.771Z"
     }
   }
 }
       ```
   - Description: The request was successful.
-
-## Components
-
-### Schemas
-
-- `LeadDTO`
-  - Define the schema details for `LeadDTO` here.
-
-- `Lead`
-  - Define the schema details for `Lead` here.
-
-
 
 # Capture Lead
 
@@ -693,10 +649,10 @@ This endpoint allows you to capture and create a new lead.
   - Schema:
     ```json
     {
-  "name": "string",
-  "email": "string",
-  "phone": "string"
-}
+      "name": "string",
+      "email": "string",
+      "phone": "string"
+    }
     ```
   - **Required**: Yes
 
@@ -707,26 +663,15 @@ This endpoint allows you to capture and create a new lead.
     - Schema:
       ```json
      {
-  "id": 0,
-  "name": "string",
-  "email": "string",
-  "phone": "string",
-  "createdDate": "2023-10-28T06:12:57.341Z"
-}
+      "id": 0,
+      "name": "string",
+      "email": "string",
+      "phone": "string",
+      "createdDate": "2023-10-28T06:12:57.341Z"
+    }
       ```
   - Description: The request was successful.
-
-## Components
-
-### Schemas
-
-- `LeadCaptureDTO`
-  - Define the schema details for `LeadCaptureDTO` here.
-
-- `LeadCapture`
-  - Define the schema details for `LeadCapture` here.
-
-
+---
 
 # Create Lead Contact Info
 
@@ -750,13 +695,13 @@ This endpoint allows you to create lead contact information.
   - Schema:
     ```json
    {
-  "companyName": "string",
-  "jobPosition": "string",
-  "address": "string",
-  "city": "string",
-  "state": "string",
-  "postalCode": 0,
-  "region": "string"
+    "companyName": "string",
+    "jobPosition": "string",
+    "address": "string",
+    "city": "string",
+    "state": "string",
+    "postalCode": 0,
+    "region": "string"
 }
     ```
   - **Required**: Yes
@@ -768,36 +713,26 @@ This endpoint allows you to create lead contact information.
     - Schema:
       ```json
       {
-  "id": 0,
-  "companyName": "string",
-  "jobPosition": "string",
-  "address": "string",
-  "city": "string",
-  "state": "string",
-  "postalCode": 0,
-  "region": "string",
-  "leadCaptureData": {
-    "id": 0,
-    "name": "string",
-    "email": "string",
-    "phone": "string",
-    "createdDate": "2023-10-28T06:15:48.311Z"
-  }
-}
+        "id": 0,
+        "companyName": "string",
+        "jobPosition": "string",
+        "address": "string",
+        "city": "string",
+        "state": "string",
+        "postalCode": 0,
+        "region": "string",
+      "leadCaptureData": {
+        "id": 0,
+        "name": "string",
+        "email": "string",
+        "phone": "string",
+        "createdDate": "2023-10-28T06:15:48.311Z"
+      }
+      }
       ```
   - Description: The request was successful.
 
-## Components
-
-### Schemas
-
-- `LeadContactDTO`
-  - Define the schema details for `LeadContactDTO` here.
-
-- `LeadContactInfo`
-  - Define the schema details for `LeadContactInfo` here.
-
-
+---
 
 # Get Authentication Token
 
