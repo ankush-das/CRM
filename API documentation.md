@@ -207,37 +207,38 @@ This endpoint allows you to transition a lead to the next stage in the pipeline.
         "stage": "NEW",
         "source": "string",
         "tag": "string",
-  "assignedUser": {
-    "id": 0,
-    "name": "string",
-    "password": "string",
-    "email": "string",
-    "companyname": "string",
-    "phone": "string",
-    "teamname": "string"
-    },
-  "expectedClosingDate": "2023-10-28T05:09:37.998Z",
-  "leadContact": {
-    "id": 0,
-    "companyName": "string",
-    "jobPosition": "string",
-    "address": "string",
-    "city": "string",
-    "state": "string",
-    "postalCode": 0,
-    "region": "string",
-    "leadCaptureData": {
-      "id": 0,
-      "name": "string",
-      "email": "string",
-      "phone": "string",
-      "createdDate": "2023-10-28T05:09:37.998Z"
+        "assignedUser": {
+          "id": 0,
+          "name": "string",
+          "password": "string",
+          "email": "string",
+          "companyname": "string",
+          "phone": "string",
+          "teamname": "string"
+      },
+        "expectedClosingDate": "2023-10-28T05:09:37.998Z",
+        "leadContact": {
+          "id": 0,
+          "companyName": "string",
+          "jobPosition": "string",
+          "address": "string",
+          "city": "string",
+          "state": "string",
+          "postalCode": 0,
+          "region": "string",
+        "leadCaptureData": {
+          "id": 0,
+          "name": "string",
+          "email": "string",
+          "phone": "string",
+          "createdDate": "2023-10-28T05:09:37.998Z"
+      }
+      }
     }
-  }
-}
       ```
   - Description: The request was successful.
 
+---
 
 # Lost Lead Stage Transition
 
