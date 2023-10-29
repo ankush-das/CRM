@@ -39,31 +39,31 @@ This endpoint allows you to update lead contact information.
     "region": "string"
   }
 
-### Responses
+**Responses**
 
 - **200 OK**
-  - Content Type: `*/*`
-    - Schema:
+  - **Content Type**: `*/*`
+    - **Schema**:
       ```json
       {
-  "id": 0,
-  "companyName": "string",
-  "jobPosition": "string",
-  "address": "string",
-  "city": "string",
-  "state": "string",
-  "postalCode": 0,
-  "region": "string",
-  "leadCaptureData": {
-    "id": 0,
-    "name": "string",
-    "email": "string",
-    "phone": "string",
-    "createdDate": "2023-10-28T04:56:36.288Z"
-  }
-}
+        "id": 0,
+        "companyName": "string",
+        "jobPosition": "string",
+        "address": "string",
+        "city": "string",
+        "state": "string",
+        "postalCode": 0,
+        "region": "string",
+        "leadCaptureData": {
+          "id": 0,
+          "name": "string",
+          "email": "string",
+          "phone": "string",
+          "createdDate": "2023-10-28T04:56:36.288Z"
+        }
+      }
       ```
-  - Description: The request was successful.
+  - **Description**: The request was successful.
 
 ---
 
@@ -89,10 +89,10 @@ This endpoint allows you to update lead capture information.
   - Schema:
     ```json
     {
-  "name": "string",
-  "email": "string",
-  "phone": "string"
-}
+      "name": "string",
+      "email": "string",
+      "phone": "string"
+    }
     ```
   - **Required**: Yes
 
@@ -112,18 +112,7 @@ This endpoint allows you to update lead capture information.
       ```
   - Description: The request was successful.
 
-## Components
-
-### Schemas
-
-- `LeadCaptureDTO`
-  - Define the schema details for `LeadCaptureDTO` here.
-
-- `LeadCapture`
-  - Define the schema details for `LeadCapture` here.
-
-
-
+---
 
 # Previous Lead Stage Transition
 
