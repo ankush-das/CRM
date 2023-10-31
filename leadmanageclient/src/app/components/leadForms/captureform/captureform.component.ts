@@ -17,7 +17,7 @@ export class CaptureformComponent {
     this.leadFormService.captureLead(leadCaptureDTO).subscribe({
       next: (response) => {
         console.log('Lead Data has been captured:', response);
-        this.successMessage = 'Lead captured successfully';
+        this.successMessage = 'Form submitted successfully';
         leadCaptureDTO.resetFields();
         setTimeout(() => {
           this.successMessage = '';

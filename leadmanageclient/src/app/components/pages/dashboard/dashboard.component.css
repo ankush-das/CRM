@@ -34,3 +34,45 @@
 .activity-lead-name {
     color: #333;
 }
+
+/* custom-styles.css */
+
+/* Style the container */
+.stylish-container {
+    display: flex;
+    gap: 10px;
+    margin-left: 60px;
+    margin-top: 100px;
+}
+
+/* Style the cards */
+.stylish-card {
+    width: 18rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.stylish-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.card-subtitle {
+    color: #777;
+}
+
+.card-text {
+    font-size: 1.2rem;
+    color: #333;
+}

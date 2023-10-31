@@ -33,8 +33,11 @@ export class PipelineService {
 
     filterLeadsBySource(source: string): Observable<LeadDTO[]> {
         const url = `${this.baseUrl}/api/lead/search/source?source=${source}`;
-
         return this.http.get<LeadDTO[]>(url);
+    }
+
+    searchLeadsByCompanyName(companyname: string): Observable<LeadDTO[]> {
+        return this.http.get<LeadDTO[]>(`${this.baseUrl}/api/lead/search/company?companyname=${companyname}`);
     }
 
     lostLeadTransition(leadId: number): Observable<LeadDTO> {

@@ -1,0 +1,820 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>leadmanageclient documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">leadmanageclient documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  DashboardComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/pages/dashboard/dashboard.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-dashboard</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./dashboard.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./dashboard.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#activities" >activities</a>
+                            </li>
+                            <li>
+                                <a href="#dashboardData" >dashboardData</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getActivities" >getActivities</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#updateStatus" >updateStatus</a>
+                            </li>
+                            <li>
+                                <a href="#updateStatuscancel" >updateStatuscancel</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(dashboardService: <a href="../injectables/DashboardService.html" target="_self">DashboardService</a>, activityService: <a href="../injectables/ActivityService.html" target="_self">ActivityService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/pages/dashboard/dashboard.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>dashboardService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/DashboardService.html" target="_self" >DashboardService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>activityService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ActivityService.html" target="_self" >ActivityService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getActivities"></a>
+                    <span class="name">
+                        <span ><b>getActivities</b></span>
+                        <a href="#getActivities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getActivities()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="24"
+                                    class="link-to-prism">src/app/components/pages/dashboard/dashboard.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="17"
+                                    class="link-to-prism">src/app/components/pages/dashboard/dashboard.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateStatus"></a>
+                    <span class="name">
+                        <span ><b>updateStatus</b></span>
+                        <a href="#updateStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateStatus(capturedLeadId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="34"
+                                    class="link-to-prism">src/app/components/pages/dashboard/dashboard.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>capturedLeadId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateStatuscancel"></a>
+                    <span class="name">
+                        <span ><b>updateStatuscancel</b></span>
+                        <a href="#updateStatuscancel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateStatuscancel(capturedLeadId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/app/components/pages/dashboard/dashboard.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>capturedLeadId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="activities"></a>
+                    <span class="name">
+                        <span ><b>activities</b></span>
+                        <a href="#activities"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/components/pages/dashboard/dashboard.component.ts:13</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="dashboardData"></a>
+                    <span class="name">
+                        <span ><b>dashboardData</b></span>
+                        <a href="#dashboardData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/DashboardDTO.html" target="_self" >DashboardDTO</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new DashboardDTO()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/pages/dashboard/dashboard.component.ts:12</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { DashboardDTO } from &#x27;src/app/model/DashboardDTO&#x27;;
+import { ActivityService } from &#x27;src/app/services/activityService&#x27;;
+import { DashboardService } from &#x27;src/app/services/dashboardService&#x27;;
+
+@Component({
+  selector: &#x27;app-dashboard&#x27;,
+  templateUrl: &#x27;./dashboard.component.html&#x27;,
+  styleUrls: [&#x27;./dashboard.component.css&#x27;],
+})
+export class DashboardComponent implements OnInit {
+  dashboardData: DashboardDTO &#x3D; new DashboardDTO();
+  activities: any;
+
+  constructor(private dashboardService: DashboardService, private activityService: ActivityService) { }
+
+  ngOnInit(): void {
+    this.dashboardService.getDashboardData().subscribe(data &#x3D;&gt; {
+      this.dashboardData &#x3D; data;
+    });
+    this.getActivities();
+  }
+
+  getActivities(): void {
+    this.activityService.getAllActivities()
+      .subscribe(data &#x3D;&gt; {
+        this.activities &#x3D; data;
+      },
+        error &#x3D;&gt; {
+          console.error(&#x27;Error fetching activities:&#x27;, error);
+        });
+  }
+
+  updateStatus(capturedLeadId: number) {
+    this.activityService.updateActivityCompleteStatus(capturedLeadId).subscribe(
+      updatedActivity &#x3D;&gt; {
+        window.location.reload();
+        console.log(&#x27;Activity status updated:&#x27;, updatedActivity);
+      },
+      error &#x3D;&gt; {
+        console.error(&#x27;Error updating activity status:&#x27;, error);
+      }
+    );
+  }
+
+  updateStatuscancel(capturedLeadId: number) {
+    this.activityService.updateActivityCancleStatus(capturedLeadId).subscribe(
+      updatedActivity &#x3D;&gt; {
+        window.location.reload();
+        console.log(&#x27;Activity status updated:&#x27;, updatedActivity);
+      },
+      error &#x3D;&gt; {
+        console.error(&#x27;Error updating activity status:&#x27;, error);
+      }
+    );
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-navbar&gt;&lt;/app-navbar&gt;
+&lt;div style&#x3D;&quot;display: flex; gap: 10px; margin-left: 60px; margin-top: 100px;&quot;&gt;
+    &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;width: 18rem;&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Contacts&lt;/h5&gt;
+            &lt;h6 class&#x3D;&quot;card-subtitle mb-2 text-muted&quot;&gt;Total Contacts&lt;/h6&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ dashboardData.totalLeads }}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;width: 18rem;&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Rate&lt;/h5&gt;
+            &lt;h6 class&#x3D;&quot;card-subtitle mb-2 text-muted&quot;&gt;Total Conversion&lt;/h6&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ dashboardData.conversionRate }}%&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;width: 18rem;&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Customer&lt;/h5&gt;
+            &lt;h6 class&#x3D;&quot;card-subtitle mb-2 text-muted&quot;&gt;Total Customer&lt;/h6&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ dashboardData.totalCustomers }}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;card&quot; style&#x3D;&quot;width: 18rem;&quot;&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+            &lt;h5 class&#x3D;&quot;card-title&quot;&gt;Revenue&lt;/h5&gt;
+            &lt;h6 class&#x3D;&quot;card-subtitle mb-2 text-muted&quot;&gt;Total Expected Revenue&lt;/h6&gt;
+            &lt;p class&#x3D;&quot;card-text&quot;&gt;₹ {{ dashboardData.totalRevenue }}&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style&#x3D;&quot;display:  flex; justify-content:space-evenly;&quot;&gt;
+    &lt;div class&#x3D;&quot;mt-4&quot;&gt;
+        &lt;h3&gt;Recent Activities&lt;/h3&gt;
+        &lt;div class&#x3D;&quot;chat-box&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let activity of activities&quot;&gt;
+                &lt;ng-container *ngIf&#x3D;&quot;activity.activityStatus &#x3D;&#x3D;&#x3D; &#x27;PENDING&#x27;&quot;&gt;
+                    &lt;div class&#x3D;&quot;chat-message&quot;&gt;
+                        &lt;div class&#x3D;&quot;activity-info&quot;&gt;
+                            &lt;div style&#x3D;&quot;display: flex; justify-content:space-between;&quot;&gt;
+                                &lt;div class&#x3D;&quot;activity-type&quot;&gt;{{ activity.activityType }}&lt;/div&gt;
+                                &lt;button (click)&#x3D;&quot;updateStatus(activity.id)&quot;&gt;Done&lt;/button&gt;
+                                &lt;button (click)&#x3D;&quot;updateStatuscancel(activity.id)&quot;&gt;Cancel&lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;activity-status&quot;&gt;{{ activity.activityStatus }}&lt;/div&gt;
+                            &lt;div class&#x3D;&quot;activity-lead-name&quot;&gt;{{ activity.lead.name }}&lt;/div&gt;
+                            &lt;div class&#x3D;&quot;activity-time&quot;&gt;{{ activity.createdDate | date: &#x27;MMMM d, y h:mm a&#x27; }}&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/ng-container&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;mt-4&quot;&gt;
+        &lt;h3&gt;Activities Completed&lt;/h3&gt;
+        &lt;div class&#x3D;&quot;chat-box&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let activity of activities&quot;&gt;
+                &lt;ng-container *ngIf&#x3D;&quot;activity.activityStatus &#x3D;&#x3D;&#x3D; &#x27;COMPLETED&#x27;|| activity.activityStatus &#x3D;&#x3D;&#x3D; &#x27;CANCELLED&#x27;&quot;&gt;
+                    &lt;div class&#x3D;&quot;chat-message&quot;&gt;
+                        &lt;div class&#x3D;&quot;activity-info&quot;&gt;
+                            &lt;div style&#x3D;&quot;display: flex; justify-content:space-between;&quot;&gt;
+                                &lt;div class&#x3D;&quot;activity-type&quot;&gt;{{ activity.activityType }}&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;div class&#x3D;&quot;activity-status&quot;&gt;{{ activity.activityStatus }}&lt;/div&gt;
+                            &lt;div class&#x3D;&quot;activity-lead-name&quot;&gt;{{ activity.lead.name }}&lt;/div&gt;
+                            &lt;div class&#x3D;&quot;activity-time&quot;&gt;{{ activity.createdDate | date: &#x27;MMMM d, y h:mm a&#x27; }}&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/ng-container&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./dashboard.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.chat-box {
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 400px;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+.chat-box {
+    max-height: 300px;
+    /* Adjust the desired maximum height */
+    overflow-y: auto;
+    /* Enable vertical scrolling when content overflows */
+}
+
+.chat-message {
+    padding: 8px;
+    border: 1px solid #d3d3d3;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.activity-type {
+    font-weight: bold;
+}
+
+.activity-status {
+    color: #666;
+}
+
+.activity-lead-name {
+    color: #333;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-navbar></app-navbar><div style="display: flex; gap: 10px; margin-left: 60px; margin-top: 100px;">    <div class="card" style="width: 18rem;">        <div class="card-body">            <h5 class="card-title">Contacts</h5>            <h6 class="card-subtitle mb-2 text-muted">Total Contacts</h6>            <p class="card-text">{{ dashboardData.totalLeads }}</p>        </div>    </div>    <div class="card" style="width: 18rem;">        <div class="card-body">            <h5 class="card-title">Rate</h5>            <h6 class="card-subtitle mb-2 text-muted">Total Conversion</h6>            <p class="card-text">{{ dashboardData.conversionRate }}%</p>        </div>    </div>    <div class="card" style="width: 18rem;">        <div class="card-body">            <h5 class="card-title">Customer</h5>            <h6 class="card-subtitle mb-2 text-muted">Total Customer</h6>            <p class="card-text">{{ dashboardData.totalCustomers }}</p>        </div>    </div>    <div class="card" style="width: 18rem;">        <div class="card-body">            <h5 class="card-title">Revenue</h5>            <h6 class="card-subtitle mb-2 text-muted">Total Expected Revenue</h6>            <p class="card-text">₹ {{ dashboardData.totalRevenue }}</p>        </div>    </div></div><div style="display:  flex; justify-content:space-evenly;">    <div class="mt-4">        <h3>Recent Activities</h3>        <div class="chat-box">            <div *ngFor="let activity of activities">                <ng-container *ngIf="activity.activityStatus === \'PENDING\'">                    <div class="chat-message">                        <div class="activity-info">                            <div style="display: flex; justify-content:space-between;">                                <div class="activity-type">{{ activity.activityType }}</div>                                <button (click)="updateStatus(activity.id)">Done</button>                                <button (click)="updateStatuscancel(activity.id)">Cancel</button>                            </div>                            <div class="activity-status">{{ activity.activityStatus }}</div>                            <div class="activity-lead-name">{{ activity.lead.name }}</div>                            <div class="activity-time">{{ activity.createdDate | date: \'MMMM d, y h:mm a\' }}</div>                        </div>                    </div>                </ng-container>            </div>        </div>    </div>    <div class="mt-4">        <h3>Activities Completed</h3>        <div class="chat-box">            <div *ngFor="let activity of activities">                <ng-container *ngIf="activity.activityStatus === \'COMPLETED\'|| activity.activityStatus === \'CANCELLED\'">                    <div class="chat-message">                        <div class="activity-info">                            <div style="display: flex; justify-content:space-between;">                                <div class="activity-type">{{ activity.activityType }}</div>                            </div>                            <div class="activity-status">{{ activity.activityStatus }}</div>                            <div class="activity-lead-name">{{ activity.lead.name }}</div>                            <div class="activity-time">{{ activity.createdDate | date: \'MMMM d, y h:mm a\' }}</div>                        </div>                    </div>                </ng-container>            </div>        </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CaptureformComponent', 'selector': 'app-captureform'},{'name': 'ContactformComponent', 'selector': 'app-contactform'},{'name': 'ContacttableComponent', 'selector': 'app-contacttable'},{'name': 'CustomerComponent', 'selector': 'app-customer'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'LeaddetailsComponent', 'selector': 'app-leaddetails'},{'name': 'LeadformpageComponent', 'selector': 'app-leadformpage'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'PipelineComponent', 'selector': 'app-pipeline'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'ReportComponent', 'selector': 'app-report'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'DashboardComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

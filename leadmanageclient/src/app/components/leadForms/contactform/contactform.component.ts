@@ -43,7 +43,7 @@ export class ContactformComponent {
             console.log('Lead contact created:', createdContact);
             // window.location.reload();
 
-            this.successMessage = 'Lead captured successfully';
+            this.successMessage = 'Form submitted successfully';
             this.contactInfo.reset();
             setTimeout(() => {
               this.successMessage = '';

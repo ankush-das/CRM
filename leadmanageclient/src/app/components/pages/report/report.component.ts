@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ChartDataset, ChartOptions, ChartType } from 'chart.js';
+import { forkJoin } from 'rxjs';
 import { PipelineService } from 'src/app/services/PipelineService';
 import { DashboardService } from 'src/app/services/dashboardService';
 
@@ -29,27 +30,40 @@ export class ReportComponent implements OnInit {
 
   revenueByStage: Map<string, number> = new Map();
   expectedRevenueByStage: Map<string, number> = new Map();
+
   lineChartData: any[] = [];
   lineChartLabels: string[] = [];
+
   lineChartOptions: any = {
     responsive: true,
   };
+
   lineChartLegend = true;
   lineChartType = 'line';
 
+  newLeadC: number = 0;
+  closedWonCount: number = 0;
+  closedLostCount: number = 0;
 
-  public pieChartOptions: ChartOptions = {
+  pieChartData: any = [
+    {
+      data: [1, 1, 1],
+      backgroundColor: ['#FF5733', '#33FF57', '#5733FF'],
+      label: 'Sample Data',
+    },
+  ];
+
+  pieChartOptions: any = {
     responsive: true,
   };
 
 
-  public pieChartData: ChartDataset[] = [];
-  public pieChartLabels: string[] = [];
+  pieChartLabels: string[] = [];
 
-  public pieChartType: ChartType = 'pie';
-  public pieChartLegend = true;
+  pieChartType = 'pie';
+  pieChartLegend = true;
 
-  constructor(private pipelineService: PipelineService, private dashboardService: DashboardService, private http: HttpClient) { }
+  constructor(private dashboardService: DashboardService, private http: HttpClient) { }
 
   ngOnInit() {
     this.dashboardService.getLeadCountInEachStage().subscribe(data => {
@@ -57,20 +71,19 @@ export class ReportComponent implements OnInit {
       this.barChartData[0] = { data: Object.values(data), label: 'Lead Counts' };
     });
 
-    this.http.get<number>('http://localhost:8080/api/dash/new').subscribe((newLeadCount: number) => {
-      this.pieChartLabels = Object.keys(newLeadCount);
-      this.pieChartData[0] = { data: Object.values(newLeadCount), label: 'new-count' }
-    });
+    const newLeadCount$ = this.http.get<number>('http://localhost:8080/api/dash/new');
+    const closedWonCount$ = this.http.get<number>('http://localhost:8080/api/dash/won-closed');
+    const closedLostCount$ = this.http.get<number>('http://localhost:8080/api/dash/lost-closed');
 
-    this.http.get<number>('http://localhost:8080/api/dash/won-closed').subscribe((closedWonCount: number) => {
-      this.pieChartLabels = Object.keys(closedWonCount);
-      this.pieChartData[1] = { data: Object.values(closedWonCount), label: 'won-closed' }
-    });
+    forkJoin([newLeadCount$, closedWonCount$, closedLostCount$]).subscribe(
+      ([newLeadCount, closedWonCount, closedLostCount]) => {
+        const resultArray = [newLeadCount, closedWonCount, closedLostCount];
 
-    this.http.get<number>('http://localhost:8080/api/dash/lost-closed').subscribe((closedLostCount: number) => {
-      this.pieChartLabels = Object.keys(closedLostCount);
-      this.pieChartData[2] = { data: Object.values(closedLostCount), label: 'lost-closed' }
-    });
+        this.pieChartData[0].data = resultArray;
+        console.log(this.pieChartData[0].data);
+      }
+    );
+
     this.combineDataAndSetChart();
   }
 
@@ -92,5 +105,18 @@ export class ReportComponent implements OnInit {
       });
     });
   }
-
 }
+
+
+// this.http.get<number>('http://localhost:8080/api/dash/new').subscribe((newLeadCount: number) => {
+//   this.newLeadC = newLeadCount;
+//   console.log(this.newLeadC);
+// });
+
+// this.http.get<number>('http://localhost:8080/api/dash/won-closed').subscribe((closedWonCount: number) => {
+//   this.closedWonCount = closedWonCount;
+// });
+
+// this.http.get<number>('http://localhost:8080/api/dash/lost-closed').subscribe((closedLostCount: number) => {
+//   this.closedLostCount = closedLostCount;
+// });

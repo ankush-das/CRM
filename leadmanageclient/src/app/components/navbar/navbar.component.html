@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4"
-    style="position: fixed; top: 0; left: 0; width: 100%; z-index: 999;">
+<nav class="navbar navbar-expand-lg mb-4" [ngClass]="{'hide-navbar': isNavbarHidden}"
+    style="position: fixed; top: 0; left: 0; width: 100%; z-index: 999; background-color:#e9efef;">
     <div class="container-fluid d-flex justify-content-between">
         <div class="d-flex justify-content-center align-items-center">
             <img src="../../../assets/crm.png" alt="logo" class="logo" />
-            <a class="navbar-brand">CRM</a>
+            <p class="navbar-brand">CRM</p>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,6 +57,10 @@
                     <p class="nav-link active" [routerLink]="['/report']" style="cursor: pointer;">
                         Report
                     </p>
+                </li>
+                <li class="nav-item">
+                    <button class="" *ngIf="authservice.isLoggedIn" style="cursor: pointer;" (click)="logout()">Logout
+                    </button>
                 </li>
             </ul>
         </div>

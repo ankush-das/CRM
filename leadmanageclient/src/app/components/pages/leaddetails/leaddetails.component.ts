@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ActivityLog } from 'src/app/model/ActivityLog';
 import { LeadDTO } from 'src/app/model/LeadDTO';
 import { LeadFormService } from 'src/app/services/LeadFormService';
 import { PipelineService } from 'src/app/services/PipelineService';
@@ -14,7 +13,9 @@ import { ActivityService } from 'src/app/services/activityService';
 export class LeaddetailsComponent implements OnInit {
   leadID: number = 0;
   lead: any
-  leadI = { quote: 'Your initial quote', budget: '', probability: '', tag: '', priority: '', stage: '', source: '' };
+  leadI = {
+    quote: 'Your initial quote', budget: '', probability: '', tag: '', priority: '', stage: '', source: '',
+  };
 
   logs: any[] = [];
 

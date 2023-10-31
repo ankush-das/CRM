@@ -1,15 +1,20 @@
 <app-navbar></app-navbar>
 <div class="content">
     <div class="row height d-flex justify-content-center align-items-center">
-        <div class="col-md-8">
-            <div class="search">
-                <input type="text" [(ngModel)]="searchTerm" placeholder="Search" class="form-control search-bar">
-                <button class="btn btn-primary" (click)="searchLeadsBySource()">Search</button>
+        <div class="col-md-7" style="position: fixed; top: 100px;">
+            <div class="search d-flex" style="align-items: center; gap:3px;;">
+                <div style="width: 700px;">
+                    <input type="text" [(ngModel)]="searchTerm" placeholder="Search by company"
+                        class="form-control search-bar">
+                </div>
+                <div>
+                    <button class="button-33" style="color: black;" (click)="searchLeadsBySource()">Search</button>
+                </div>
             </div>
         </div>
     </div>
-    <div class="lead-pipeline">
-        <div class="d-flex">
+    <div class="lead-pipeline" style="margin-top: 100px;">
+        <div class="d-flex mt-4">
 
             <!-- NEW stage  -->
             <div class="col-4">
@@ -35,6 +40,7 @@
                                                     data-bs-toggle="modal" data-bs-target="#exampleModal"
                                                     (click)="onactivityCreation($event, lead.id)"></fa-icon>
                                             </div>
+
                                             <div>
                                                 <fa-icon [icon]="faLeftLong"
                                                     (click)="onTransitionPrev($event,lead.id)"></fa-icon>

@@ -1,5 +1,6 @@
 package com.management.lead.leadmangement.services;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -83,7 +84,12 @@ public class DashboardService {
             return 0.0; // To avoid division by zero
         }
 
-        return ((double) allCustomers.size() / allCaptures.size()) * 100;
+        // return ((double) allCustomers.size() / allCaptures.size()) * 100;
+        double conversionRate = ((double) allCustomers.size() / allCaptures.size()) * 100;
+
+        // Format the conversion rate to two decimal places
+        DecimalFormat df = new DecimalFormat("#.00");
+        return Double.parseDouble(df.format(conversionRate));
     }
 
     public Map<String, Long> getLeadCountInEachStage() {

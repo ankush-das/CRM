@@ -37,23 +37,11 @@ export class PipelineComponent implements OnInit {
     this.leadFormService.getUsers().subscribe(data => {
       this.users = data;
     });
+    console.log(this.searchTerm);
+
   }
 
   @ViewChild('successModal') successModal: any;
-
-  // onTransitionNext(event: Event, leadId: number) {
-  //   event.stopPropagation();
-  //   this.pipelineService.nextLeadStageTransition(leadId)
-  //     .subscribe(
-  //       (response) => {
-  //         console.log('Transition successful:', response);
-  //         window.location.reload();
-  //       },
-  //       (error) => {
-  //         console.error('Transition failed:', error);
-  //       }
-  //     );
-  // }
 
   onTransitionNext(event: Event, leadId: number) {
     event.stopPropagation();
@@ -67,21 +55,6 @@ export class PipelineComponent implements OnInit {
       },
     });
   }
-
-
-  // onTransitionPrev(event: Event, leadId: number) {
-  //   event.stopPropagation();
-  //   this.pipelineService.prevLeadStageTransition(leadId)
-  //     .subscribe(
-  //       (response) => {
-  //         console.log('Previous transition successful:', response);
-  //         window.location.reload();
-  //       },
-  //       (error) => {
-  //         console.error('Previous transition failed:', error);
-  //       }
-  //     );
-  // }
 
   onTransitionPrev(event: Event, leadId: number) {
     event.stopPropagation();
@@ -97,28 +70,30 @@ export class PipelineComponent implements OnInit {
   }
 
 
-  // searchLeadsBySource() {
-  //   this.pipelineService.filterLeadsBySource(this.searchTerm)
-  //     .subscribe(
-  //       (leads) => {
-  //         this.leads = leads;
-  //       },
-  //       (error) => {
-  //         console.error('Error searching by source:', error);
-  //       }
-  //     );
-  // }
-
   searchLeadsBySource() {
-    this.pipelineService.filterLeadsBySource(this.searchTerm).subscribe({
-      next: (leads) => {
-        this.leads = leads;
-      },
-      error: (error) => {
-        console.error('Error searching by source:', error);
-      },
-    });
+    this.pipelineService.searchLeadsByCompanyName(this.searchTerm)
+      .subscribe(
+        (leads) => {
+          this.leads = leads;
+          console.log(this.leads);
+
+        },
+        (error) => {
+          console.error('Error searching by source:', error);
+        }
+      );
   }
+
+  // searchLeadsBySource() {
+  //   this.pipelineService.filterLeadsBySource(this.searchTerm).subscribe({
+  //     next: (leads) => {
+  //       this.leads = leads;
+  //     },
+  //     error: (error) => {
+  //       console.error('Error searching by source:', error);
+  //     },
+  //   });
+  // }
 
 
   generateStars(priority: string): { icon: IconProp; starClass: string }[] {
@@ -152,7 +127,7 @@ export class PipelineComponent implements OnInit {
     this.activityService.createActivity(capturedLeadId, activityDTO).subscribe({
       next: (createdActivity) => {
         console.log('Activity created:', createdActivity);
-        this.successMessage = 'Lead captured successfully';
+        this.successMessage = 'Activity scheduled successfully';
         activityDTO.reset();
         setTimeout(() => {
           this.successMessage = '';

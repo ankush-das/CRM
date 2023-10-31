@@ -2,6 +2,7 @@
 <table class="table table-striped" style="margin-top: 100px;">
     <thead>
         <tr>
+            <th>SID</th>
             <th>Company Name</th>
             <th>Job Position</th>
             <th>Address</th>
@@ -14,6 +15,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let contact of leadContacts">
+            <td>{{contact.id}}</td>
             <td>{{ contact.companyName }}</td>
             <td>{{ contact.jobPosition }}</td>
             <td>{{ contact.address }}</td>

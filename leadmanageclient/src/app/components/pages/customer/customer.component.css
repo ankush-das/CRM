@@ -1,0 +1,29 @@
+/* custom-table.css */
+
+/* Style the table header */
+.table thead th {
+    background-color: #318CE7;
+    color: white;
+}
+
+/* Style table rows on hover */
+.table tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style alternating rows with a light background */
+.table tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+/* Add padding and center text in table cells */
+.table td,
+.table th {
+    text-align: center;
+    padding: 8px;
+}
+
+/* Add margin to the top of the table */
+.table {
+    margin-top: 100px;
+}

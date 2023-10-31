@@ -67,8 +67,25 @@ public class LeadService {
         String leadId = String.valueOf(leadCapture.getId());
         String baseUrl = "http://localhost:4200/";
 
-        String message = "Please fill out the contact details at link" + baseUrl +
-                leadId;
+        // String message = "Please fill out the contact details at link" + baseUrl +
+        // leadId;
+        String message = "Dear " + leadCaptureDTO.getName() + ",\n\n" +
+                "I hope this email finds you well. We kindly request your assistance in updating your contact details in our records.\n\n"
+                +
+                "To provide your updated information, please click on the following link:\n\n" +
+                baseUrl + "contact/" + leadId + "\n\n" +
+                "Once you access the link, you will be directed to our contact form, where you can enter your name, email address, phone number, and any other relevant details. Please ensure that all information provided is accurate and current.\n\n"
+                +
+                "Your cooperation is vital in helping us maintain accurate and up-to-date contact information, ensuring we can continue to provide you with the best service possible.\n\n"
+                +
+                "If you encounter any issues or have any questions, please do not hesitate to contact our customer support team at [Customer Support Email Address] or [Customer Support Phone Number]. They are available to assist you.\n\n"
+                +
+                "Thank you for your prompt attention to this matter, and for your continued support of our organization. We look forward to staying in touch with you and appreciate your assistance.\n\n"
+                +
+                "Best regards,\n\n" +
+                "Ankush\n" +
+                "SalesPerson\n" +
+                "Prodapt\n";
         // Send an email to the captured lead
         sendEmailToLead(leadCaptureDTO.getEmail(), "Thank you for your interest",
                 message);
